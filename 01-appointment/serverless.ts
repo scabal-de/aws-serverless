@@ -1,0 +1,36 @@
+import type { AWS } from "@serverless/typescript";
+import { appointment, medic } from "./src/functions";
+
+const serverlessConfiguration: AWS = {
+  service: "appointment",
+  frameworkVersion: "3",
+  plugins: ["serverless-esbuild"],
+  provider: {
+    name: "aws",
+    runtime: "nodejs20.x",
+    apiGateway: {
+      minimumCompressionSize: 1024,
+      shouldStartNameWithService: true,
+    },
+    environment: {
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
+      NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
+    },
+  },
+  package: { individually: true },
+  custom: {
+    esbuild: {
+      bundle: true,
+      minify: true,
+      target: "es2020",
+      sourcemap: true,
+      exclude: ["aws-sdk"],
+      define: { "require.resolve": undefined },
+      platform: "node",
+      concurrency: 10,
+    },
+  },
+  functions: { appointment, medic },
+};
+
+module.exports = serverlessConfiguration;

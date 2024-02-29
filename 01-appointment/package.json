@@ -1,0 +1,28 @@
+{
+  "name": "aws-aerverless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serverless.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">= 14.15.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@serverless/typescript": "^3.38.0",
+    "@types/node": "^20.11.23",
+    "@typescript-eslint/parser": "^7.1.0",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prettier-eslint": "^16.3.0",
+    "serverless": "^3.38.0",
+    "serverless-esbuild": "^1.51.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
