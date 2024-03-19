@@ -24,5 +24,9 @@
     "serverless-esbuild": "^1.51.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/joi": "^17.2.3",
+    "aws-sdk": "^2.1580.0"
   }
 }
